@@ -1,0 +1,18 @@
+
+img {
+    width: 30%; /* Ancho es 30% de la página */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.bottom-text {
+    position: relative; /* Relativa a la imágen */
+    margin: 0 auto;
+    width: 30%;           /* Ancho es 30% de la página */
+    text-align: center;
+    color: white;       /* color del texto */
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+}
