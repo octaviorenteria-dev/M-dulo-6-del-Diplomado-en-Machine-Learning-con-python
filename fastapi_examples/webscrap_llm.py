@@ -11,7 +11,7 @@ import ollama
 
 
 app = FastAPI()
-
+ollama_client =  ollama.AsyncClient(host="http://localhost:11434")
 
 logging.basicConfig(
 
@@ -62,8 +62,7 @@ async def root():
     return {"message": "This page scraps data from the page https://quotes.toscrape.com"}
 
 @app.on_event("startup")
-def startup_event():    
-    ollama_client =  ollama.AsyncClient(host="http://localhost:11434")
+def startup_event():   
     app.queue_page = asyncio.Queue()
     app.queue_results = asyncio.Queue()
     app.task = asyncio.create_task(server_loop())
