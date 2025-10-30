@@ -4,3 +4,4 @@ streamlit-extras
 fastapi[standard] == 0.116.2
 leafmap == 0.54.0
 ollama
+html2text
