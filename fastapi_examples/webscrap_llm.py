@@ -29,8 +29,6 @@ class Quote(BaseModel):
 class Quotes(BaseModel):
     quotes: List[Quote]
 
-
-
 async def server_loop():
     h = html2text.HTML2Text()
     prompt = '''
@@ -55,14 +53,29 @@ async def server_loop():
         logger.info(data)    
         await app.queue_results.put(data)
 
-
-
 @app.get("/")
 async def root():
     return {"message": "This page scraps data from the page https://quotes.toscrape.com"}
 
 @app.on_event("startup")
-def startup_event():   
+def startup_event():    
     app.queue_page = asyncio.Queue()
     app.queue_results = asyncio.Queue()
     app.task = asyncio.create_task(server_loop())
+
+@app.get("/put/{page_id}")
+async def put_item(page_id:int):
+    await app.queue_page.put(page_id)
+    return {"page_id": page_id}
+
+@app.get("/get")
+async def get_item():
+    
+    if app.queue_results.qsize() == 0:
+        return {'queue': 'empty'}
+
+    items = []
+    while app.queue_results.qsize() > 0:
+        items.append(await app.queue_results.get())
+
+    return items
