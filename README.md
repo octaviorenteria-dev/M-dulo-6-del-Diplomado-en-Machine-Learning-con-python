@@ -16,7 +16,18 @@ La estructura del repositorio es la siguiente:
 ```
 .
 ├── fastapi_examples
-│   └── 01_hello_world.py
+│   ├── 01_hello_world.py
+│   ├── 02_generate.py
+│   ├── 03_path.py
+│   ├── 04_post.py
+│   ├── 05_events.py
+│   ├── 06_bg_task.py
+│   ├── 07_chart.py
+│   ├── 08_webscrap_gui.py
+│   ├── sam2_api.py
+│   ├── sam2_gui.py
+│   ├── sync.py
+│   └── webscrap_llm.py
 ├── flask_examples
 │   └── webapp
 │       ├── main.py
@@ -32,9 +43,6 @@ La estructura del repositorio es la siguiente:
 │       │       └── code.js
 │       └── templates
 │           └── template.html
-├── streamlit_examples
-│   └── pages
-│       └── 01_hello_world.py
 ├── images
 │   ├── dr_mariano_rivera.jpg
 │   ├── elephant1.jpg
@@ -42,7 +50,27 @@ La estructura del repositorio es la siguiente:
 │   └── tiger.jpg
 ├── README.md
 ├── requirements-dl.txt
-└── requirements.txt
+├── requirements.txt
+└── streamlit_examples
+    ├── main.py
+    └── pages
+        ├── 01_hello_world.py
+        ├── 02_write.py
+        ├── 03_write_stream.py
+        ├── 04_widgets.py
+        ├── 05_image.py
+        ├── 06_camera.py
+        ├── 07_charts.py
+        ├── 08_map_chart.py
+        ├── 08_maps_cache.py
+        ├── 09_chart_pyploy.py
+        ├── 10_cache.py
+        ├── 11_cache_resources.py
+        ├── 12_session_state.py
+        ├── 13_chat_ollama.py
+        ├── 14_heatmap.py
+        ├── 15_live_camera.py
+        └── 16_login.py
 ```
 
 ## Requisitos
